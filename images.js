@@ -22,8 +22,13 @@ function runLoops() {
 
         addImageToDiv("#while-loop");
     */
+    let numNeeded = num + 1;
+    let numCreated = 0;
 
-
+    while (numCreated < numNeeded) {
+        addImageToDiv("#while-loop");
+        numCreated++;
+    }
 
 
 
@@ -34,8 +39,13 @@ function runLoops() {
 
         addImageToDiv("#do-while-loop");
     */
+    let doNumNeeded = num - 1;
+    let doNumCreated = 0;
 
-
+    do {
+        addImageToDiv("#do-while-loop");
+        doNumCreated++;
+    } while (doNumCreated < doNumNeeded);
 
 
 
@@ -47,8 +57,12 @@ function runLoops() {
         addImageToDiv("#for-loop");
     */
 
+    let forNumCreated = 0;
 
-
+    for (forNumCreated = 0; forNumCreated < num; forNumCreated++)
+    {
+        addImageToDiv("#for-loop");
+    }
 
 
 }

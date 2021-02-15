@@ -22,8 +22,18 @@ function runLoops(event) {
         "do-while-loop" ==>  runDoWhileLoop()
     */
 
-
-
+if (selectedLoop === "while-loop")
+{
+    runWhileLoop();
+}
+else if (selectedLoop === "do-while-loop")
+{
+    runDoWhileLoop();
+}
+else if (selectedLoop === "for-loop")
+{
+    runForLoop();
+}
 
 
 }
@@ -31,7 +41,7 @@ function runLoops(event) {
 
 function runWhileLoop() {
     let number = parseInt($("input#myNumber").val());
-    let output = "";
+    let output = "A";
 
     /*
         Use a while loop to output the letter A
@@ -46,8 +56,14 @@ function runWhileLoop() {
         $("div#while-result").append(...);
     */
 
+    let whileNumPrinted = 0;
 
-    $("div#while-result").text(output);
+    while (whileNumPrinted < number) {
+        $("div#while-result").append(output);
+        whileNumPrinted++;
+    }
+
+
 }
 
 
@@ -59,6 +75,10 @@ function runForLoop() {
         Use a for loop to add the numbers 1 through "number"
         into the variable "sum". Output the sum to the div.
     */
+
+    for (let numPrinted = 0; numPrinted < number; numPrinted++) {
+        sum += numPrinted + 1;
+    }
 
     $("div#for-result").text(sum);
 }
@@ -78,6 +98,11 @@ function runDoWhileLoop() {
         $("div#do-while-result").append(...);
     */
 
+    let doWhileNumPrinted = 0;
 
+    do {
+            $("div#do-while-result").append(doWhileNumPrinted + 1);
+            doWhileNumPrinted++;
+        } while (number > doWhileNumPrinted);
 
 }
